@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Reset e Base */
 * {
     margin: 0;
     padding: 0;
@@ -6,121 +6,130 @@
 }
 
 body {
-    background-color: #F2E8D5; /* Ivory Sand - Fundo calmo */
+    background-color: #F2E8D5; /* Ivory Sand - Paleta Terrosa */
     font-family: 'Lato', sans-serif;
-    color: #2c3e50;
-    display: flex;
-    justify-content: center;
+    color: #3e3e3e;
+    line-height: 1.6;
 }
 
 .container {
     width: 100%;
     max-width: 450px;
-    padding: 40px 20px;
+    margin: 0 auto;
+    padding: 30px 20px;
     text-align: center;
 }
 
-/* Cabeçalho e Foto */
-header {
-    margin-bottom: 25px;
+/* Foto em Círculo */
+.profile-container {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .profile-pic {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
+/* Títulos */
 h1 {
     font-family: 'Cormorant Garamond', serif;
-    color: #A0522D; /* Burnt Sienna - Título elegante */
-    font-size: 2.2rem;
-    margin-top: 15px;
+    color: #A0522D; /* Burnt Sienna */
+    font-size: 2.3rem;
+    font-weight: 700;
 }
 
 .subtitle {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    letter-spacing: 2.5px;
     color: #708090; /* Stormy Sky */
     text-transform: uppercase;
-    letter-spacing: 2px;
     margin-top: 5px;
-}
-
-/* Caixa de Destaque */
-.highlight-box {
-    background: rgba(138, 154, 91, 0.1); /* Sage Green clarinho */
-    padding: 20px;
-    border-radius: 12px;
     margin-bottom: 30px;
-    border-left: 5px solid #8A9A5B; /* Sage Green sólido */
-    line-height: 1.6;
 }
 
-/* Botões */
-.links-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
+/* Botão WhatsApp Chamativo */
 .btn-whatsapp {
-    background-color: #8A9A5B; /* Sage Green */
-    color: white;
-    padding: 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    transition: 0.3s;
-}
-
-.btn-secondary {
-    background-color: white;
-    color: #444;
-    padding: 16px;
+    gap: 12px;
+    background-color: #8A9A5B; /* Sage Green */
+    color: white;
+    padding: 18px;
     border-radius: 50px;
     text-decoration: none;
-    font-size: 0.95rem;
-    border: 1px solid #e0e0e0;
-    transition: 0.2s;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 20px rgba(138, 154, 91, 0.4);
 }
 
-.btn-secondary:hover {
-    background-color: #fafafa;
-    transform: translateY(-2px);
+.pulse {
+    animation: pulse-animation 2.5s infinite;
 }
 
-/* Animação Pulse para o WhatsApp */
-.shadow-pulse {
-    animation: pulse 2s infinite;
+@keyframes pulse-animation {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(138, 154, 91, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(138, 154, 91, 0); }
+    100% { transform: scale(1); }
 }
 
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(138, 154, 91, 0.6); }
-    70% { box-shadow: 0 0 0 15px rgba(138, 154, 91, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(138, 154, 91, 0); }
+/* Seções de Texto */
+.content-section {
+    margin-bottom: 35px;
+    text-align: left;
 }
 
-/* Rodapé */
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    color: #A0522D;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    padding-left: 5px;
+    border-bottom: 1px solid #d4af37;
+    display: inline-block;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.card p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Footer */
 footer {
     margin-top: 50px;
+    border-top: 1px solid rgba(160, 82, 45, 0.2);
+    padding-top: 20px;
 }
 
-footer p {
-    font-size: 0.85rem;
-    color: #95a5a6;
-    margin-bottom: 5px;
+.experience-badge {
+    font-weight: 700;
+    color: #8A9A5B;
+    margin-bottom: 10px;
 }
 
 .tagline {
+    font-family: 'Cormorant Garamond', serif;
     font-style: italic;
+    font-size: 1.2rem;
     color: #A0522D;
-    font-weight: 300;
 }
