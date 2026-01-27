@@ -1,0 +1,126 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F2E8D5; /* Ivory Sand - Fundo calmo */
+    font-family: 'Lato', sans-serif;
+    color: #2c3e50;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Cabeçalho e Foto */
+header {
+    margin-bottom: 25px;
+}
+
+.profile-pic {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    object-fit: cover;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #A0522D; /* Burnt Sienna - Título elegante */
+    font-size: 2.2rem;
+    margin-top: 15px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #708090; /* Stormy Sky */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+/* Caixa de Destaque */
+.highlight-box {
+    background: rgba(138, 154, 91, 0.1); /* Sage Green clarinho */
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border-left: 5px solid #8A9A5B; /* Sage Green sólido */
+    line-height: 1.6;
+}
+
+/* Botões */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-whatsapp {
+    background-color: #8A9A5B; /* Sage Green */
+    color: white;
+    padding: 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #444;
+    padding: 16px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border: 1px solid #e0e0e0;
+    transition: 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: #fafafa;
+    transform: translateY(-2px);
+}
+
+/* Animação Pulse para o WhatsApp */
+.shadow-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(138, 154, 91, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(138, 154, 91, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(138, 154, 91, 0); }
+}
+
+/* Rodapé */
+footer {
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 0.85rem;
+    color: #95a5a6;
+    margin-bottom: 5px;
+}
+
+.tagline {
+    font-style: italic;
+    color: #A0522D;
+    font-weight: 300;
+}
