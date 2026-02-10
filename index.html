@@ -12,21 +12,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* --- VARIÁVEIS DA IDENTIDADE VISUAL --- */
+        /* --- VARIÁVEIS --- */
         :root {
             --bg-color: #EBE5CE;       /* Bege Areia */
-            --text-color: #4A555E;     /* Cinza Chumbo (Legibilidade) */
-            --accent-color: #A64B26;   /* Terracota (Botões) */
-            --secondary-color: #B6C1A9; /* Verde Sálvia (Detalhes) */
+            --text-color: #4A555E;     /* Cinza Chumbo */
+            --accent-color: #A64B26;   /* Terracota */
             --white: #FFFFFF;
+            --card-bg: rgba(255, 255, 255, 0.6);
         }
 
-        /* --- CONFIGURAÇÕES GERAIS --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* --- GERAL --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: var(--bg-color);
@@ -36,25 +32,24 @@
             display: flex;
             justify-content: center;
             min-height: 100vh;
+            padding: 20px;
         }
 
         .container {
             width: 100%;
-            max-width: 480px; /* Largura de celular */
-            padding: 40px 20px;
+            max-width: 480px;
             text-align: center;
-            background-image: radial-gradient(circle at top, rgba(255,255,255,0.4), transparent 70%);
         }
 
-        /* --- CABEÇALHO --- */
+        /* --- PERFIL --- */
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--white);
             box-shadow: 0 4px 15px rgba(166, 75, 38, 0.15);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         h1 {
@@ -63,12 +58,13 @@
             font-style: italic;
             font-size: 2rem;
             color: var(--accent-color);
+            line-height: 1.1;
             margin-bottom: 5px;
         }
 
         h2 {
             font-family: 'Lato', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: var(--text-color);
@@ -77,16 +73,17 @@
         }
 
         .bio {
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-bottom: 30px;
             padding: 0 10px;
         }
 
-        /* --- BOTÕES (LINKS) --- */
+        /* --- BOTÕES --- */
         .links {
             display: flex;
             flex-direction: column;
             gap: 15px;
+            margin-bottom: 40px;
         }
 
         .btn {
@@ -97,76 +94,60 @@
             color: var(--white);
             text-decoration: none;
             padding: 16px 20px;
-            border-radius: 50px; /* Formato Pílula */
+            border-radius: 50px;
             font-weight: 700;
             font-size: 1rem;
-            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
             box-shadow: 0 4px 10px rgba(166, 75, 38, 0.2);
-            position: relative;
+            transition: transform 0.2s;
         }
 
-        .btn i {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(166, 75, 38, 0.3);
-            background-color: #8f3e1e; /* Um pouco mais escuro */
-        }
+        .btn i { margin-right: 10px; font-size: 1.2rem; }
+        .btn:hover { transform: translateY(-2px); background-color: #8f3e1e; }
 
         /* Botão Secundário (Transparente) */
         .btn-outline {
             background-color: transparent;
-            border: 2px solid var(--accent-color);
+            border: 1px solid var(--accent-color);
             color: var(--accent-color);
             box-shadow: none;
         }
+        .btn-outline:hover { background-color: rgba(166, 75, 38, 0.05); }
 
-        .btn-outline:hover {
-            background-color: var(--accent-color);
-            color: var(--white);
+        /* --- SEÇÃO O QUE É CQM --- */
+        .info-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 20px;
+            text-align: left;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .info-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
         }
 
         /* --- RODAPÉ --- */
-        footer {
-            margin-top: 50px;
-            font-size: 0.8rem;
-            opacity: 0.7;
-        }
-        
-        .social-icons {
-            margin-bottom: 15px;
-        }
+        footer { font-size: 0.75rem; opacity: 0.7; margin-top: auto; }
+        .social-icons a { color: var(--accent-color); font-size: 1.4rem; margin: 0 8px; }
 
-        .social-icons a {
-            color: var(--accent-color);
-            font-size: 1.5rem;
-            margin: 0 10px;
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-
-        .social-icons a:hover {
-            opacity: 0.7;
-        }
-
-        /* Animação suave de entrada */
-        .fade-in {
-            animation: fadeIn 1s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        /* Animação */
+        .fade-in { animation: fadeIn 1s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
     <div class="container fade-in">
-        <img src="perfil.png" alt="Foto Silvia Carvalho" class="profile-img">
+        <img src="perfil.png" alt="Silvia Carvalho" class="profile-img">
 
         <h1>Silvia Carvalho</h1>
         <h2>Terapia Integrativa & CQM</h2>
@@ -176,17 +157,26 @@
         </p>
 
         <div class="links">
-            <a href="https://wa.me/55SEUNUMEROAQUI" class="btn" target="_blank">
+            <a href="https://wa.me/5512981033007?text=Ol%C3%A1%2C+Silvia!+Vim+pelo+seu+site+e+gostaria+de+agendar+um+hor%C3%A1rio." class="btn" target="_blank">
                 <i class="fab fa-whatsapp"></i> Agendar Sessão
             </a>
 
             <a href="#" class="btn btn-outline">
-                <i class="fas fa-map-marker-alt"></i> Onde Atendo
+                <i class="fas fa-map-marker-alt"></i> Atendimento Presencial e Online
             </a>
+        </div>
 
-            <a href="#" class="btn btn-outline">
-                <i class="fas fa-question-circle"></i> O que é CQM?
-            </a>
+        <div class="info-card">
+            <h3>O que é CQM?</h3>
+            <p>
+                <strong>CQM (Colapso de Função de Onda Quântica)</strong> não é mágica, é ciência aplicada à cura.
+            </p>
+            <p>
+                Muitas vezes, a raiz da sua dor não está no corpo físico, mas gravada na memória das suas células.
+            </p>
+            <p>
+                Com essa metodologia, eu identifico e neutralizo traumas, medos e bloqueios energéticos que estão travando sua vida, permitindo que a saúde e a prosperidade voltem a fluir.
+            </p>
         </div>
 
         <footer>
